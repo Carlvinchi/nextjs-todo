@@ -40,7 +40,7 @@ function AddTask() {
 
         if(!todoText || !priority) return alert("Please enter text and select the priority");
     
-        addTodo(todoText, priority);
+        addTodo(todoText, priority); 
     
         setTodo("");
         setPriority("");
@@ -50,9 +50,31 @@ function AddTask() {
 
     const handleUpdate = (id) => {
     
-        update(updatedTodoText, updatedTodoPriority, id);
+        if(updatedTodoText === "" && updatedTodoPriority ===""){
+          const item = Todos.find(element => element.id === id);
+
+          update(item.text, item.priority, id);
+        }
+
+        else if(updatedTodoText === ""){
+          const item = Todos.find(element => element.id === id);
+
+          update(item.text, updatedTodoPriority, id);
+        }
+
+        else if(updatedTodoPriority ===""){
+          const item = Todos.find(element => element.id === id);
+
+          update(updatedTodoText, item.priority, id);
+        }
+
+        else {
+          update(updatedTodoText, updatedTodoPriority, id);
         setUpdatedTodo("");
         setUpdatedTodoPriority("");
+
+        }
+        
     
       }
 

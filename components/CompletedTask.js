@@ -42,7 +42,7 @@ function CompletedTask() {
 
   const handleSingleRemove = (id) => {
     remove(id);
-    toastAlert();
+    toastAlert(); 
   }
 
   const handleDeleteAllCompleted = () => {

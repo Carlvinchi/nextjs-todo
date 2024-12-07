@@ -29,7 +29,7 @@ import { useToast } from "@/hooks/use-toast"
 
 function PendingTask() {
 
-    const { toast } = useToast();
+    const { toast } = useToast(); 
     const {Todos, remove, setCompleted, setEdit, removeAllPending} = useTodoStore();
 
     const toastAlert = () => {
